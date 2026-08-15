@@ -25,12 +25,23 @@ avg_accel = filtered_df['accelerations'].mean() if 'accelerations' in filtered_d
 avg_decel = filtered_df['decelerations'].mean() if 'decelerations' in filtered_df else 0.0
 avg_stamina = filtered_df['stamina_score'].mean() if 'stamina_score' in filtered_df else 0.0
 
-with k1: render_kpi_card("Avg Distance", f"{avg_dist:.2f} km", theme=theme)
-with k2: render_kpi_card("Sprint Distance", f"{avg_sprint:.2f} km", theme=theme)
-with k3: render_kpi_card("Top Speed", f"{max_speed:.1f} km/h", theme=theme)
-with k4: render_kpi_card("Avg Accel", f"{avg_accel:.1f}", theme=theme)
-with k5: render_kpi_card("Avg Decel", f"{avg_decel:.1f}", theme=theme)
-with k6: render_kpi_card("Stamina Score", f"{avg_stamina:.1f}", theme=theme)
+with k1:
+    render_kpi_card("Avg Distance", f"{avg_dist:.2f} km", theme=theme)
+
+with k2:
+    render_kpi_card("Sprint Distance", f"{avg_sprint:.2f} km", theme=theme)
+
+with k3:
+    render_kpi_card("Top Speed", f"{max_speed:.1f} km/h", theme=theme)
+
+with k4:
+    render_kpi_card("Avg Accel", f"{avg_accel:.1f}", theme=theme)
+
+with k5:
+    render_kpi_card("Avg Decel", f"{avg_decel:.1f}", theme=theme)
+
+with k6:
+    render_kpi_card("Stamina Score", f"{avg_stamina:.1f}", theme=theme)
 
 st.divider()
 
