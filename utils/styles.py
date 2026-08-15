@@ -186,14 +186,14 @@ def render_kpi_card(
 
     html = f"""
     <div class="fifa-kpi-card">
-        <div class="fifa-kpi-header">
-            <div class="fifa-kpi-title">{title}</div>
-            {badge_html}
-        </div>
+    <div class="fifa-kpi-header">
+        <div class="fifa-kpi-title">{title}</div>
+        {badge_html}
+    </div>
 
-        <div class="fifa-kpi-val">{value}</div>
+    <div class="fifa-kpi-val">{value}</div>
 
-        {subtitle_html}
+    {subtitle_html}
     </div>
     """
     st.markdown(html, unsafe_allow_html=True)
