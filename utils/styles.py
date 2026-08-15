@@ -163,17 +163,37 @@ def apply_custom_styles(theme: str = "dark"):
     """
     st.markdown(css, unsafe_allow_html=True)
 
-def render_kpi_card(title: str, value: str, subtitle: str = "", badge: str = "", theme: str = "dark"):
-    """Renders a styled HTML KPI Card."""
-    badge_html = f'<span class="badge badge-primary">{badge}</span>' if badge else ''
+def render_kpi_card(
+    title: str,
+    value: str,
+    subtitle: str = "",
+    badge: str = "",
+    theme: str = "dark"
+):
+    """Render a styled FIFA KPI card."""
+
+    badge_html = (
+        f'<span class="badge badge-primary">{badge}</span>'
+        if badge
+        else ""
+    )
+
+    subtitle_html = (
+        f'<div class="fifa-kpi-subtitle">{subtitle}</div>'
+        if subtitle
+        else ""
+    )
+
     html = f"""
     <div class="fifa-kpi-card">
-        <div style="display: flex; justify-space-between; align-items: center;">
+        <div class="fifa-kpi-header">
             <div class="fifa-kpi-title">{title}</div>
             {badge_html}
         </div>
+
         <div class="fifa-kpi-val">{value}</div>
-        {'<div class="fifa-kpi-subtitle">' + subtitle + '</div>' if subtitle else ''}
+
+        {subtitle_html}
     </div>
     """
     st.markdown(html, unsafe_allow_html=True)
